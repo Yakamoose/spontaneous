@@ -4,3 +4,10 @@ services:
 - mongodb
 before_script: chmod 0777 ./node_modules/.bin/mocha
 # before_script: - npm install mongoose
+deploy:
+  provider: heroku
+  api_key:
+    secure: b6baadf1-92dc-4d5e-baa9-c2ca6bdf56ff
+  app: afternoon-citadel-95376
+  on:
+    repo: https://github.com/Yakamoose/spontaneous
