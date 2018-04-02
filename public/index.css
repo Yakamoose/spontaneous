@@ -3,6 +3,48 @@ body, html {
     margin: 0;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #919D47;
+}
+
+.login {
+    float: right;
+}
+
+.sign-up {
+  margin: 0px;
+}
+
+.title {
+  position: absolute;
+  left: 41%;
+  font-size: 33px;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  padding-top: 9px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+}
+
+li .login:hover {
+    background-color: #738637;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
 .background-image {
     /* The image used */
     background-image: url("https://image.freepik.com/foto-gratis/fondo-de-madera-con-tulipanes-bonitos_23-2147600685.jpg");
@@ -38,7 +80,8 @@ p {
 .description {
   width: 45%;
   max-width: 700px;
-  padding: 40px 0 0 5%;
+  padding: 80px 0 0 5%;
+    
 }
 
 .btn {
