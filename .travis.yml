@@ -3,11 +3,10 @@ node_js: node
 services:
 - mongodb
 before_script: chmod 0777 ./node_modules/.bin/mocha
-# before_script: - npm install mongoose
 deploy:
-  provider: heroku
-  api_key:
-    secure: b6baadf1-92dc-4d5e-baa9-c2ca6bdf56ff
+  provider: heroku 
   app: afternoon-citadel-95376
   on:
     repo: https://github.com/Yakamoose/spontaneous
+  api-key:
+    secure: XR8ZCuMJV7wZadKerp7/SU5sw1v2y/C9UuAC3Li+CBAGpt8rbBg4OVriJnfFtrxFttoZwALHzVKAJb3fQAgks3eIh9pMBgoejjYEnC/vTjJmv//K7L1LyOUAbvY7vkRtHKE9beDIwsn092ySzUHoIBsPD6JnSg6ws0BlGWrBYIKc9Plb1MZ+4QnacmWVpqjMMPCzuTIZ0DzdTjHWu1Ort8n66fzVvjbruh9fCizMcUoeNDI8FOGBOSMQX9yVSQs84+/COf3KEUjSzZ8uLFU0GlsYoXUJDeBZ5BDrlM4DpEtObDEtmCQdPyOBntjZSouXsbFE3RuF0rfVXSAQcX0nruwhcoV3hrh1v2wk5UWj+/jPDAwgExtc2RpFcbsvdfXACcywhVTWmSwp6J61cEjdrvzCj+Rxz3TY/Lr7CaL45PM7pWbjH19pAsb4m56RPeBVQKCAlH4TnwKRJvLCzrsPnYrpM9oEhYU6fU6ICGtB9E52vY7nC1LHD97f+mqlSRp/4EQbSjgN4s9X7tQW79IeMqFQLKKVHstvGOj3bZSPAGcwodHGvPg1RgMSuRos9ByJuTl/oxzBaKa0Nr0oMEX6zr2w1vGmiMxSP9vGXxuA4d0r7LHoVUHGtsUfIx3734xNwRoMA8xdNSbxQmsumD3eOE4My+5h9oM7qtyswujdxEE=
