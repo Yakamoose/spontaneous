@@ -1,0 +1,63 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.background-image {
+    /* The image used */
+    background-image: url("https://image.freepik.com/foto-gratis/fondo-de-madera-con-tulipanes-bonitos_23-2147600685.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 20px;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  position: relative;
+  text-align: center;
+  font-size: 100px;
+}
+
+p {
+  text-align: center;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.description {
+  width: 45%;
+  max-width: 700px;
+  padding: 40px 0 0 5%;
+}
+
+.btn {
+  display: block;
+  margin: 40px auto;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  background: #919D47;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:hover {
+  background: #738637;
+  text-decoration: none;
+}

@@ -30,10 +30,20 @@ describe('start up test', function() {
     return closeServer();
   });
 
-  describe('get endpoint', function() {
+  describe('home page check', function() {
     it('should return status 200', function() {
       return chai.request(app)
         .get('/')
+        .then(function(res) {
+          expect(res).to.have.status(200);
+        });
+    });
+  });
+
+  describe('create order page check', function() {
+    it('should return status 200', function() {
+      return chai.request(app)
+        .get('/create-order-page.html')
         .then(function(res) {
           expect(res).to.have.status(200);
         });

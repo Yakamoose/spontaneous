@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slow Flowers</title>
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway" rel="stylesheet">
+      <link href="create-order-page.css" rel="stylesheet" type="text/css">
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <nav>
+      <ul>
+        <li><a class="home" href="index.html">Home</a></li>
+        <li class="title">Slow Flowers</li>
+        <li><a class="about" href="#about">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+
+
+  <form id="contact" action="" method="post">
+    <h3>Create Order</h3>
+    <h4>Fill out fields to create your custom order.</h4>
+    <fieldset>
+      <input placeholder="From" type="text" tabindex="1" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="To" type="text" tabindex="1" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Delivery Address" type="text" tabindex="3" required>
+    </fieldset>
+  <ul>	<li id="li_6" >
+  <label class="description" for="element_6">Floral Arrangement </label>
+  <span>
+    <input id="element_6_1" name="element_6" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_6_1">1 Dozen Roses $24.99</label>
+<input id="element_6_2" name="element_6" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_6_2">2 Dozen Roses $49.99</label>
+
+  </span>
+  </li>		<li id="li_7" >
+  <label class="description" for="element_7">Delivery Window </label>
+  <div>
+  <select class="element select medium" id="element_7" name="element_7">
+    <option value="" selected="selected"></option>
+<option value="1" >2 weeks</option>
+<option value="2" >1 month</option>
+<option value="3" >3 months</option>
+<option value="4" >6 months</option>
+<option value="5" >1 year</option>
+
+  </select>
+  </div><p class="guidelines" id="guide_7"><small>Deliveries will occur randomly between now and the length of time you choose.</small></p>
+</li>	</ul>
+    <fieldset>
+      <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type a message to attach to bouquet here....(optional)" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
+
+  </body>
+</html>
