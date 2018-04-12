@@ -7,15 +7,22 @@ const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL, TEST_DATABASE_URL } = require('./config');
-const { User } = require('./model');
+const { User } = require('./models');
 
 const app = express();
 app.use(express.static('public'));
 app.use(bodyParser.json());
 // app.listen(process.env.PORT || 8080);
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'Content-Type');
+  res.header('Access-Control-Allow-Origin', 'GET, POST, PUT, PATCH, DELETE');
+  next();
+});
 
-app.get('/user', (req, res) => {
+
+app.get('/users', (req, res) => {
   User
     .find()
     .then(users => {
@@ -37,6 +44,13 @@ app.get('/user/:id', (req, res) => {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
     });
+})
+
+app.get('/user/:userName', (req, res) => {
+  console.log(':userName');
+  console.log(req.params);
+  User
+    .find({'userName': ''})
 })
 
 app.post('/user', (req, res) => {
@@ -90,6 +104,58 @@ app.put('/user/:id', (req, res) => {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
     });
+
+});
+
+app.put('/user/order/:id', (req, res) => {
+
+  const requiredFields = ['firstName'];
+  delete req.body.id;
+  // console.log(req.body);
+  // console.log('req.body');
+
+  for (let i = 0; i < requiredFields.length; i++) {
+    const field = requiredFields[i];
+    if (!(field in req.body.orders[0])) {
+      const message = `Missing \`${field}\` in request body`;
+      console.error(message);
+      return res.status(400).send(message);
+    };
+  };
+
+
+  let toUpdate = {};
+  toUpdate = req.body;
+  // console.log('toUpdate');
+  // console.log(toUpdate);
+  let updateId = req.params.id;
+
+
+
+  User
+    .findById(req.params.id)
+    .then(function(user) {
+
+      user.orders.push(toUpdate.orders[0]);
+      toUpdate = user.orders;
+      // console.log('in first part of put');
+      // console.log(toUpdate);
+
+      User
+        .findByIdAndUpdate(updateId, { $set: {orders: toUpdate}}, { new: true })
+        .then(user => res.status(200).json(user.serialize()))
+        .catch(err => {
+          console.error('error' + err);
+          res.status(500).json({ message: 'Internal server error' });
+        });
+
+      return toUpdate;
+    })
+    .catch(err => {
+      console.error('error' + err);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+
 
 });
 
