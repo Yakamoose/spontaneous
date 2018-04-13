@@ -53,14 +53,39 @@ function watchLoginButton() {
     const userName = document.getElementById("existingName").value;
     const password = document.getElementById("existingPassword").value;
 
-    const user = {userName, password};
-
+    const user = {
+      userName: userName,
+      password: password
+    };
     console.log(user);
 
-    localStorage.loggedIn = 1;
+    $.ajax({
+      type: 'GET',
+      contentType: 'application/json',
+      url: `http://localhost:8080/user/${user.userName}/${user.password}`,
+      success: function(data) {
+        console.log('success');
+        console.log(data);
 
 
-    window.location = './home.html';
+          if(data.userName != null) {
+            localStorage.loggedIn = 1;
+            localStorage.setItem('userId', data.id);
+            console.log('we found a match');
+            console.log(data.id);
+            window.location = './home.html';
+
+
+          } else {
+            alert(data.message);
+          }
+        }
+        });
+
+
+    // alert('no such user found');
+
+
   });
 }
 $(watchLoginButton);
@@ -87,18 +112,88 @@ function watchCreateUserButton() {
     console.log(user);
 
     $.ajax({
-						type: 'POST',
-						data: JSON.stringify(user),
-				    contentType: 'application/json',
-            url: 'http://localhost:8080/user/',
-            success: function(data) {
-                console.log('success');
-                console.log(JSON.stringify(data));
-            }
-    });
-    localStorage.loggedIn = 1;
+      type: 'GET',
+      contentType: 'application/json',
+      url: `http://localhost:8080/user/${user.userName}/${user.password}`,
+      success: function(data) {
+        console.log('success');
+        console.log(data);
 
-    window.location = './home.html';
+
+          if(data.message != null) {
+            $.ajax({
+        						type: 'POST',
+        						data: JSON.stringify(user),
+        				    contentType: 'application/json',
+                    url: 'http://localhost:8080/user/',
+                    success: function(data) {
+                        console.log('success');
+                        console.log(JSON.stringify(data));
+                        localStorage.setItem('userId', data.id);
+                        localStorage.loggedIn = 1;
+                        window.location = './home.html';
+
+                    }
+            });
+
+
+          } else {
+            alert('User already exists');
+          }
+        }
+        });
+    // $.ajax({
+    //   type: 'GET',
+    //   contentType: 'application/json',
+    //   url: 'http://localhost:8080/users',
+    //   success: function(data) {
+    //     console.log('success');
+    //     console.log(data);
+    //     data.forEach(function(users) {
+    //       if(users.userName === user.userName && users.password === user.password) {
+    //         alert('User already exists.');
+    //         // window.location = './index.html'
+    //         // $('.start-box').hide();
+    //         // $(".signup-login").hide();
+    //         // $('.signup-box').show();
+    //         // $('.login-box').hide();
+    //         // return;
+    //       } else {
+    //         $.ajax({
+    //     						type: 'POST',
+    //     						data: JSON.stringify(user),
+    //     				    contentType: 'application/json',
+    //                 url: 'http://localhost:8080/user/',
+    //                 success: function(data) {
+    //                     console.log('success');
+    //                     console.log(JSON.stringify(data));
+    //                     localStorage.setItem('userId', data.id);
+    //                     localStorage.loggedIn = 1;
+    //                     window.location = './home.html';
+    //
+    //                 }
+    //         });
+    //       }
+    //     });
+    //
+    //   }
+    // })
+
+    // $.ajax({
+		// 				type: 'POST',
+		// 				data: JSON.stringify(user),
+		// 		    contentType: 'application/json',
+    //         url: 'http://localhost:8080/user/',
+    //         success: function(data) {
+    //             console.log('success');
+    //             console.log(JSON.stringify(data));
+    //             localStorage.setItem('userId', data.id);
+    //             localStorage.loggedIn = 1;
+    //             window.location = './home.html';
+    //
+    //         }
+    // });
+
   });
 }
 $(watchCreateUserButton);

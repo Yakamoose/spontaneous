@@ -46,12 +46,24 @@ app.get('/user/:id', (req, res) => {
     });
 })
 
-app.get('/user/:userName', (req, res) => {
-  console.log(':userName');
+app.get('/user/:userName/:password', (req, res) => {
   console.log(req.params);
   User
-    .find({'userName': ''})
+    .findOne({userName: req.params.userName, password: req.params.password })
+    .then(user => {
+      if(user != null) {
+      res.json(user.serialize());
+    } else {
+      res.json({message: 'user not found'});
+    }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ message: 'Internal server error' });
+    })
 })
+
+
 
 app.post('/user', (req, res) => {
   const requiredFields = ['firstName', 'lastName', 'userName', 'password', 'email'];

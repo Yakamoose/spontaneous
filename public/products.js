@@ -16,7 +16,7 @@ $(watchCreateOrder);
 
 
 function watchHomeSubmit() {
-  $('a').click(event => {
+  $('a.home').click(event => {
 
     if(localStorage.loggedIn == 0) {
       window.location = './index.html';
@@ -27,3 +27,4 @@ function watchHomeSubmit() {
 
   })
 }
+$(watchHomeSubmit);

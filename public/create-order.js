@@ -30,15 +30,15 @@ let order = [{
 
 
 
-$.ajax({
-  type: 'GET',
-  contentType: 'application/json',
-  url: 'http://localhost:8080/user/5ace5b56b41ae65e60778cc6',
-  success: function(data) {
-    console.log('success');
-    console.log(data);
-  }
-});
+// $.ajax({
+//   type: 'GET',
+//   contentType: 'application/json',
+//   url: 'http://localhost:8080/user/5ace5b56b41ae65e60778cc6',
+//   success: function(data) {
+//     console.log('success');
+//     console.log(data);
+//   }
+// });
 
 
 function watchDozen() {
@@ -94,7 +94,7 @@ function watchAddressSubmit() {
     event.preventDefault();
     order[0].firstName = document.getElementById('firstName').value;
     order[0].lastName = document.getElementById('lastName').value;
-    order[0].address = [];
+    order[0].address = {};
     order[0].address.street = document.getElementById('street').value;
     order[0].address.city = document.getElementById('city').value;
     order[0].address.state = document.getElementById('state').value;
@@ -168,6 +168,8 @@ function watchChooseDate() {
     event.preventDefault();
 
     order[0].deliveryDate = document.getElementById('choose-date-id').value;
+    order[0].deliveryDate = order[0].deliveryDate.slice(0, 10);
+    // console.log(order[0].deliveryDate);
     console.log(order);
     $('.title-product').hide();
     $('.title-address').hide();
@@ -228,21 +230,25 @@ function watchPaymentSubmit() {
     const orders ={orders: order};
     console.log(orders);
 
-    $.ajax({
-      type: 'GET',
-      contentType: 'application/json',
-      url: 'http://localhost:8080/users',
-      success: function(data) {
-        console.log('success');
-        console.log(data);
-      }
-    })
+    // $.ajax({
+    //   type: 'GET',
+    //   contentType: 'application/json',
+    //   url: 'http://localhost:8080/users',
+    //   success: function(data) {
+    //     console.log('success');
+    //     console.log(data);
+    //   }
+    // })
+    const endpoint = localStorage.userId;
+    // console.log('endpoint');
+    // console.log(endpoint);
+
 
     $.ajax({
       type: 'PUT',
       data: JSON.stringify(orders),
       contentType: 'application/json',
-      url: 'http://localhost:8080/user/order/5ace77410db8565d383d9500',
+      url: `http://localhost:8080/user/order/${endpoint}`,
       success: function(data) {
         console.log('success');
         console.log(data);

@@ -3,8 +3,16 @@
 }
 
 body, html {
-    height: 100%;
+    height:100%;
     margin: 0;
+}
+
+body {
+  background-image: url("https://img.elo7.com.br/product/original/1C102EA/adesivo-papel-de-parede-chevron-floral-escolha-a-cor.jpg");
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
 }
 
 ul {
@@ -16,12 +24,8 @@ ul {
 
 }
 
-.products {
+.home {
     float: right;
-}
-
-.edit-user {
-
 }
 
 
@@ -46,58 +50,87 @@ li a {
     font-size: 25px;
 }
 
-li .products:hover {
+li .home:hover {
     background-color: #738637;
-}
-
-.background-image {
-    /* The image used */
-    background-image: url("https://img.elo7.com.br/product/original/1C102EA/adesivo-papel-de-parede-chevron-floral-escolha-a-cor.jpg");
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .box {
 
   /*background-image: url("https://img00.deviantart.net/d861/i/2010/348/c/c/brown_wall_texture_by_fantasystock-d34un9s.jpg");*/
   background-color: #919D47;
-  width: 550px;
-  height: 400px;
+  width: 1000px;
+  height: auto;
   /*border: 2px solid black;*/
-  border-radius: 5%;
+  border-radius: 15px;
   vertical-align: center;
 
-  margin-top: 130px;
+  margin-top: 35px;
+  padding-bottom: 15px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
 
+.title-box {
 
-.home {
+  /*background-image: url("https://img00.deviantart.net/d861/i/2010/348/c/c/brown_wall_texture_by_fantasystock-d34un9s.jpg");*/
+  background-color: #919D47;
+  width: 550px;
+  height: 70px;
+  /*border: 2px solid black;*/
+  border-radius: 15px;
+  vertical-align: center;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.title-box h1{
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  color: ivory;
+
+}
+
+.dozen {
+
+}
+
+img {
+  width: 300px;
+  border-radius: 6px;
+  margin-top: 30px;
+}
+
+
+.orders {
   display: inline-block;
   text-align: center;
 }
 
-.home h1{
+.orders h1{
   font-family: 'Dancing Script', cursive;
   font-size: 40px;
   font-weight: bold;
-
+  color: ivory;
+  text-align: center;
 }
 
-.home .create-order {
+.orders p{
+  font-size: 20px;
+}
+
+.orders .div-left {
   float: left;
   margin-left: 20px;
   margin-top: 20px;
-  width: 250px;
-  height: 360px;
+  width: 495px;
+  height: 460px;
   border: 6px solid ivory;
   padding: 40px 10px;
   font-family: 'Raleway', sans-serif;
@@ -106,13 +139,13 @@ li .products:hover {
   border-radius: 5%;
 }
 
-.home .view-orders {
+.orders .div-right {
   position: absolute;
-  left: 250px;
+  left: 500px;
   margin-right: 20px;
   margin-top: 20px;
-  width: 250px;
-  height: 360px;
+  width: 450px;
+  height: 460px;
   border: 6px solid ivory;
   margin-left: 30px;
   padding: 40px 10px;
@@ -123,8 +156,8 @@ li .products:hover {
 
 }
 
-.home button {
-  margin-top: 20px;
+.orders button {
+  margin-top: 10px;
   background: #738637;
   border: none;
   font-family: 'Raleway', sans-serif;
@@ -136,6 +169,6 @@ li .products:hover {
   padding: 0 10px;
 }
 
-.home button:hover {
+.orders button:hover {
   background: darkolivegreen;
 }

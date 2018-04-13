@@ -1,7 +1,15 @@
-function watchProducts() {
+function watchCreateOrder() {
   $('.create-btn').click(event => {
     event.preventDefault();
     window.location = './create-order.html';
   });
 }
-$(watchProducts);
+$(watchCreateOrder);
+
+function watchViewOrders() {
+  $('.edit-btn').click(event => {
+    event.preventDefault();
+    window.location = './view-orders.html';
+  });
+}
+$(watchViewOrders);
