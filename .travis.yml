@@ -4,8 +4,8 @@ services:
 - mongodb
 before_script: chmod 0777 ./node_modules/.bin/mocha
 deploy:
-  provider: heroku 
-  app: afternoon-citadel-95376
+  provider: heroku
+  app: modern-romance
   on:
     repo: https://github.com/Yakamoose/spontaneous
   api-key:

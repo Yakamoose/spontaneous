@@ -62,7 +62,7 @@ function watchLoginButton() {
     $.ajax({
       type: 'GET',
       contentType: 'application/json',
-      url: `http://localhost:8080/user/${user.userName}/${user.password}`,
+      url: `https://modern-romance.herokuapp.com/user/${user.userName}/${user.password}`,
       success: function(data) {
         console.log('success');
         console.log(data);
@@ -114,7 +114,7 @@ function watchCreateUserButton() {
     $.ajax({
       type: 'GET',
       contentType: 'application/json',
-      url: `http://localhost:8080/user/${user.userName}/${user.password}`,
+      url: `https://modern-romance.herokuapp.com/user/${user.userName}/${user.password}`,
       success: function(data) {
         console.log('success');
         console.log(data);
@@ -125,7 +125,7 @@ function watchCreateUserButton() {
         						type: 'POST',
         						data: JSON.stringify(user),
         				    contentType: 'application/json',
-                    url: 'http://localhost:8080/user/',
+                    url: 'https://modern-romance.herokuapp.com/user/',
                     success: function(data) {
                         console.log('success');
                         console.log(JSON.stringify(data));
