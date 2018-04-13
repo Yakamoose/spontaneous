@@ -7,7 +7,7 @@ let user = {};
 $.ajax({
   type: 'GET',
   contentType: 'application/json',
-  url: `http://localhost:8080/user/${endpoint}`,
+  url: `https://modern-romance.herokuapp.com/user/${endpoint}`,
   success: function(data) {
     console.log('success');
     console.log(data);

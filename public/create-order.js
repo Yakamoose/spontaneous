@@ -248,7 +248,7 @@ function watchPaymentSubmit() {
       type: 'PUT',
       data: JSON.stringify(orders),
       contentType: 'application/json',
-      url: `http://localhost:8080/user/order/${endpoint}`,
+      url: `https://modern-romance.herokuapp.com/user/order/${endpoint}`,
       success: function(data) {
         console.log('success');
         console.log(data);
