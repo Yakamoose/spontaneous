@@ -47,7 +47,7 @@ app.get('/user/:id', (req, res) => {
 })
 
 app.get('/user/:userName/:password', (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
   User
     .findOne({userName: req.params.userName, password: req.params.password })
     .then(user => {

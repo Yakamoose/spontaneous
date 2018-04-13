@@ -127,7 +127,27 @@ describe('API tests', function() {
     });
   });
 
-  describe('GET user endpoint', function() {
+  describe('create order page check', function() {
+    it('should return status 200', function() {
+      return chai.request(app)
+        .get('/create-order.html')
+        .then(function(res) {
+          expect(res).to.have.status(200);
+        });
+    });
+  });
+
+  describe('view orders page check', function() {
+    it('should return status 200', function() {
+      return chai.request(app)
+        .get('/view-orders.html')
+        .then(function(res) {
+          expect(res).to.have.status(200);
+        });
+    });
+  });
+
+  describe('GET users endpoint', function() {
     it('should return all users', function() {
       let res;
       return chai.request(app)
@@ -158,24 +178,26 @@ describe('API tests', function() {
     });
   });
 
-  // describe('GET 1 user by username', function() {
-  //   it('should return a specific user', function() {
-  //     let findUser = {};
-  //     return User
-  //       .findOne()
-  //       .then(function(res) {
-  //         findUser = res;
-  //         console.log('res');
-  //         console.log(res);
-  //         return chai.request(app)
-  //           .get(`/user/${res.userName}`)
-  //       })
-  //       .then(function(res) {
-  //         expect(res).to.have.status(200);
-  //         expect(findUser.userName).to.equal(`${res.body.userName}`);
-  //       });
-  //   });
-  // });
+  describe('GET 1 user by username and password endpoint', function() {
+    it('should return a specific user', function() {
+      let findUser = {};
+      return User
+        .findOne()
+        .then(function(res) {
+          findUser = res;
+          // console.log('res');
+          // console.log(res);
+          return chai.request(app)
+            .get(`/user/${res.userName}/${res.password}`)
+        })
+        .then(function(res) {
+          expect(res).to.have.status(200);
+          expect(findUser.userName).to.equal(`${res.body.userName}`);
+          expect(findUser.password).to.equal(`${res.body.password}`);
+
+        });
+    });
+  });
 
 
   describe('POST user endpoint', function() {
