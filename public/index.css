@@ -250,11 +250,10 @@ li .login:hover {
 
 .signup-box h1{
   font-family: 'Dancing Script', cursive;
-  text-align: center;
+  /*text-align: center;*/
   color: ivory;
   font-size: 40px;
-  /*padding-top: 0px;*/
-  top: -20px;
+
 }
 
 .signup-form input{
