@@ -201,7 +201,7 @@ img {
   .lofOut {
     display: none;
   }
-  .title-view {
+  .title-box h1 {
     font-size: 30px;
   }
 }
