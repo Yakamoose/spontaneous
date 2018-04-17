@@ -177,12 +177,22 @@ img {
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .product {
     display: none;
   }
   .box {
     width: fit-content;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .order h1 {
+    font-size: 30px;
+  }
+  .orders p {
+    font-size: 15px;
   }
 }
 
