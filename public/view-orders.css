@@ -194,6 +194,10 @@ img {
   .details h2 {
     font-size: 23px;
   }
+  .orders .div-left {
+    width: fit-content;
+    height: fit-content;
+  }
 }
 
 
