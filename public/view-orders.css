@@ -144,8 +144,8 @@ img {
 .orders .div-right {
   position: absolute;
   left: 500px;
-  margin-right: 20px;
-  margin-top: 20px;
+  /*margin-right: 20px;
+  margin-top: 20px;*/
   width: 450px;
   height: 460px;
   border: 6px solid ivory;
