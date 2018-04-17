@@ -57,30 +57,34 @@ function watchLoginButton() {
       userName: userName,
       password: password
     };
-    console.log(user);
+    // console.log(user);
 
-    $.ajax({
-      type: 'GET',
-      contentType: 'application/json',
-      url: `https://modern-romance.herokuapp.com/user/${user.userName}/${user.password}`,
-      success: function(data) {
-        console.log('success');
-        console.log(data);
-
-
-          if(data.userName != null) {
-            localStorage.loggedIn = 1;
-            localStorage.setItem('userId', data.id);
-            console.log('we found a match');
-            console.log(data.id);
-            window.location = './home.html';
+    if(userName != "" && password != "") {
+      $.ajax({
+        type: 'GET',
+        contentType: 'application/json',
+        url: `https://modern-romance.herokuapp.com/user/${user.userName}/${user.password}`,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
 
 
-          } else {
-            alert(data.message);
+            if(data.userName != null) {
+              localStorage.loggedIn = 1;
+              localStorage.setItem('userId', data.id);
+              console.log('we found a match');
+              console.log(data.id);
+              window.location = './home.html';
+
+
+            } else {
+              alert(data.message);
+            }
           }
-        }
-        });
+          });
+    } else {
+      alert('Must fill in ALL fields');
+    }
   });
 }
 $(watchLoginButton);
@@ -105,38 +109,41 @@ function watchCreateUserButton() {
     };
 
     console.log(user);
-
-    $.ajax({
-      type: 'GET',
-      contentType: 'application/json',
-      url: `https://modern-romance.herokuapp.com/user/${user.userName}/${user.password}`,
-      success: function(data) {
-        console.log('success');
-        console.log(data);
-
-
-          if(data.message != null) {
-            $.ajax({
-        						type: 'POST',
-        						data: JSON.stringify(user),
-        				    contentType: 'application/json',
-                    url: 'https://modern-romance.herokuapp.com/user/',
-                    success: function(data) {
-                        console.log('success');
-                        console.log(JSON.stringify(data));
-                        localStorage.setItem('userId', data.id);
-                        localStorage.loggedIn = 1;
-                        // window.location = './home.html';
-
-                    }
-            });
+    if(firstName != "" && lastName != "" && email != "" && userName != "" && password != "") {
+      $.ajax({
+        type: 'GET',
+        contentType: 'application/json',
+        url: `https://modern-romance.herokuapp.com/user/${user.userName}/${user.password}`,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
 
 
-          } else {
-            alert('User already exists');
+            if(data.message != null) {
+              $.ajax({
+          						type: 'POST',
+          						data: JSON.stringify(user),
+          				    contentType: 'application/json',
+                      url: 'https://modern-romance.herokuapp.com/user/',
+                      success: function(data) {
+                          console.log('success');
+                          console.log(JSON.stringify(data));
+                          localStorage.setItem('userId', data.id);
+                          localStorage.loggedIn = 1;
+                          // window.location = './home.html';
+
+                      }
+              });
+
+
+            } else {
+              alert('User already exists');
+            }
           }
-        }
-        });
+          });
+    } else {
+      alert('Must fill in ALL fields');
+    }
     // $.ajax({
     //   type: 'GET',
     //   contentType: 'application/json',

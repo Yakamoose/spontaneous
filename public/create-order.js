@@ -100,12 +100,19 @@ function watchAddressSubmit() {
     order[0].address.state = document.getElementById('state').value;
     order[0].address.zipCode = document.getElementById('zipCode').value;
 
-    console.log(order);
-    $('.title-address').hide();
-    $('.title-delivery-date').show();
+    if(order[0].firstName != "" && order[0].lastName != "" && order[0].address.street != "" && order[0].address.city != "" && order[0].address.state != "" && order[0].address.state != "" && order[0].address.zipCode != "" ) {
+      console.log(order);
+      $('.title-address').hide();
+      $('.title-delivery-date').show();
 
-    $('.address').hide();
-    $('.delivery-date').show();
+      $('.address').hide();
+      $('.delivery-date').show();
+    } else {
+      alert('Please fill in ALL fields');
+    }
+
+
+
   });
 }
 $(watchAddressSubmit);
@@ -117,61 +124,65 @@ function watchSpontSubmit() {
   $('.spontaneous-date-btn').click(event => {
     event.preventDefault();
 
-    let dateWindow = Number(document.querySelector('input[name="choice"]:checked').id);
     // console.log(dateWindow);
+    if(document.querySelector('input[name="choice"]:checked') != null) {
+      let dateWindow = Number(document.querySelector('input[name="choice"]:checked').id);
 
-    var d = new Date();
-    var m = d.getMonth()+1;
-    var day = d.getDate();
-    var month = Number;
-    let year = Number(d.getFullYear());
+      var d = new Date();
+      var m = d.getMonth()+1;
+      var day = d.getDate();
+      var month = Number;
+      let year = Number(d.getFullYear());
 
 
-    if((dateWindow+m) > 12){
-      month = (dateWindow+m)-12;
-      year++;
-    }
-    else{
-      month = (dateWindow+m);
-
-    }
-
-    const deliveryDate = `${month}/${day}/${year}`;
-    // console.log(deliveryDate);
-
-    let todayYear = Number(d.getFullYear());
-    let todayMonth = d.getMonth()+1;
-    let todayDay = d.getDate();
-    let today = `${todayMonth}/${todayDay}/${todayYear}`;
-
-    function randomDate(date1, date2){
-      function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
+      if((dateWindow+m) > 12){
+        month = (dateWindow+m)-12;
+        year++;
       }
-      var date1 = date1 || '04-16-2018'
-      var date2 = date2 || new Date().toLocaleDateString()
-      date1 = new Date(date1).getTime()
-      date2 = new Date(date2).getTime()
-      if( date1>date2){
-        return new Date(getRandomArbitrary(date2,date1)).toLocaleDateString()
-      } else{
-        return new Date(getRandomArbitrary(date1, date2)).toLocaleDateString()
+      else{
+        month = (dateWindow+m);
+
       }
+
+      const deliveryDate = `${month}/${day}/${year}`;
+      // console.log(deliveryDate);
+
+      let todayYear = Number(d.getFullYear());
+      let todayMonth = d.getMonth()+1;
+      let todayDay = d.getDate();
+      let today = `${todayMonth}/${todayDay}/${todayYear}`;
+
+      function randomDate(date1, date2){
+        function getRandomArbitrary(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        var date1 = date1 || '04-16-2018'
+        var date2 = date2 || new Date().toLocaleDateString()
+        date1 = new Date(date1).getTime()
+        date2 = new Date(date2).getTime()
+        if( date1>date2){
+          return new Date(getRandomArbitrary(date2,date1)).toLocaleDateString()
+        } else{
+          return new Date(getRandomArbitrary(date1, date2)).toLocaleDateString()
+        }
+      }
+
+      order[0].deliveryDate = randomDate(deliveryDate, today);
+
+      console.log(order);
+
+
+      $('.title-product').hide();
+      $('.title-address').hide();
+      $('.title-delivery-date').hide();
+      $('.title-note').show();
+
+      $('.address').hide();
+      $('.delivery-date').hide();
+      $('.note').show();
+    } else {
+      alert('Please choose a Spontaneous delivery date.');
     }
-
-    order[0].deliveryDate = randomDate(deliveryDate, today);
-
-    console.log(order);
-
-
-    // $('.title-product').hide();
-    // $('.title-address').hide();
-    // $('.title-delivery-date').hide();
-    // $('.title-note').show();
-    //
-    // $('.address').hide();
-    // $('.delivery-date').hide();
-    // $('.note').show();
     });
 
 }
@@ -184,15 +195,19 @@ function watchChooseDate() {
     order[0].deliveryDate = document.getElementById('choose-date-id').value;
     order[0].deliveryDate = order[0].deliveryDate.slice(0, 10);
     // console.log(order[0].deliveryDate);
-    console.log(order);
-    $('.title-product').hide();
-    $('.title-address').hide();
-    $('.title-delivery-date').hide();
-    $('.title-note').show();
+    if(document.getElementById('choose-date-id').value != "") {
+      console.log(order);
+      $('.title-product').hide();
+      $('.title-address').hide();
+      $('.title-delivery-date').hide();
+      $('.title-note').show();
 
-    $('.address').hide();
-    $('.delivery-date').hide();
-    $('.note').show();
+      $('.address').hide();
+      $('.delivery-date').hide();
+      $('.note').show();
+    } else {
+      alert('Please choose a date from the calendar.');
+    }
   });
 }
 $(watchChooseDate);
