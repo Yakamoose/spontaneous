@@ -202,12 +202,12 @@ img {
     display: none;
   }
   .title-box h1 {
-    padding-top: 5px;
+    /*padding-top: 5px;*/
     font-size: 30px;
   }
   .title-box {
-    width: auto;
-
+    width: fit-content;
+    height: fit-content;
   }
 }
 
