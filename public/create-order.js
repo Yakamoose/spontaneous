@@ -136,28 +136,42 @@ function watchSpontSubmit() {
 
     }
 
-    // faker.date.between('2015-01-01', '2015-12-31'); //returns "2015-04-03T20:10:12.819Z"
-
-    console.log(month);
-    console.log(day);
-    console.log(year);
-
     const deliveryDate = `${month}/${day}/${year}`;
-    console.log(deliveryDate);
+    // console.log(deliveryDate);
 
-    order[0].deliveryDate = deliveryDate;
+    let todayYear = Number(d.getFullYear());
+    let todayMonth = d.getMonth()+1;
+    let todayDay = d.getDate();
+    let today = `${todayMonth}/${todayDay}/${todayYear}`;
+
+    function randomDate(date1, date2){
+      function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      var date1 = date1 || '04-16-2018'
+      var date2 = date2 || new Date().toLocaleDateString()
+      date1 = new Date(date1).getTime()
+      date2 = new Date(date2).getTime()
+      if( date1>date2){
+        return new Date(getRandomArbitrary(date2,date1)).toLocaleDateString()
+      } else{
+        return new Date(getRandomArbitrary(date1, date2)).toLocaleDateString()
+      }
+    }
+
+    order[0].deliveryDate = randomDate(deliveryDate, today);
 
     console.log(order);
 
 
-    $('.title-product').hide();
-    $('.title-address').hide();
-    $('.title-delivery-date').hide();
-    $('.title-note').show();
-
-    $('.address').hide();
-    $('.delivery-date').hide();
-    $('.note').show();
+    // $('.title-product').hide();
+    // $('.title-address').hide();
+    // $('.title-delivery-date').hide();
+    // $('.title-note').show();
+    //
+    // $('.address').hide();
+    // $('.delivery-date').hide();
+    // $('.note').show();
     });
 
 }

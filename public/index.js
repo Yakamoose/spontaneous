@@ -81,11 +81,6 @@ function watchLoginButton() {
           }
         }
         });
-
-
-    // alert('no such user found');
-
-
   });
 }
 $(watchLoginButton);
@@ -131,7 +126,7 @@ function watchCreateUserButton() {
                         console.log(JSON.stringify(data));
                         localStorage.setItem('userId', data.id);
                         localStorage.loggedIn = 1;
-                        window.location = './home.html';
+                        // window.location = './home.html';
 
                     }
             });

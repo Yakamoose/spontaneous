@@ -7,6 +7,7 @@
     <link href="index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <link rel="icon" type="image/png"  href="./images/title-icon.png"/>
     <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -15,15 +16,12 @@
   </head>
   <body>
 
-
-
     <div class="background-image">
       <nav>
         <ul>
           <li><a class="title" href="index.html">Moderen Romance</a></li>
           <li><a class="login nav-right" href="#">Log In</a></li>
           <li><a class="products nav-right" href="products.html">Products</a></li>
-
         </ul>
       </nav>
 
@@ -54,13 +52,12 @@
         <div class="signup-box" style="display: none;">
             <h1>Create Your Account</h1>
             <form class="signup-form" method="post">
-              <input type="text" id="first-name" name="first name" placeholder="First Name" required="true">
-							<input type="text" id="last-name" name="last name" placeholder="Last Name" required="true">
-              <input type="email" id="email" name="email" placeholder="Email" required="true">
-              <input type="text" id="username" name="user name" placeholder="Username" required="true">
-							<input type="password" id="password" name="password" placeholder="Password" required="true">
+              <input type="text" id="first-name" name="first name" placeholder="First Name" required>
+							<input type="text" id="last-name" name="last name" placeholder="Last Name" required>
+              <input type="email" id="email" name="email" placeholder="Email" required>
+              <input type="text" id="username" name="user name" placeholder="Username" required>
+							<input type="password" id="password" name="password" placeholder="Password" required>
 							<button type="submit" class="create-btn">Create Account</button>
-
             </form>
         </div>
 
@@ -68,8 +65,8 @@
           <div class="login-border">
           <h1>Log In</h1>
           <form action="#" class="login-form" method="get">
-							<input type="text" id="existingName" name="user name" placeholder="Username" required="true">
-							<input type="password" id="existingPassword" name="password" placeholder="Password" required="true">
+							<input type="text" id="existingName" name="user name" placeholder="Username" required>
+							<input type="password" id="existingPassword" name="password" placeholder="Password" required>
 							<button type="submit" class="login-window-btn">Log In</button>
 						</form>
           </div>

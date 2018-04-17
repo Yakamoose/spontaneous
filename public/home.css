@@ -16,6 +16,10 @@ ul {
 
 }
 
+.nav-right {
+    float: right;
+}
+
 .products {
     float: right;
 }
@@ -67,8 +71,8 @@ li .products:hover {
 
   /*background-image: url("https://img00.deviantart.net/d861/i/2010/348/c/c/brown_wall_texture_by_fantasystock-d34un9s.jpg");*/
   background-color: #919D47;
-  width: 550px;
-  height: 400px;
+  max-width: 550px;
+  height: auto;
   /*border: 2px solid black;*/
   border-radius: 5%;
   vertical-align: center;
@@ -77,6 +81,7 @@ li .products:hover {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  padding: 20px;
 }
 
 
@@ -94,8 +99,7 @@ li .products:hover {
 
 .home .create-order {
   float: left;
-  margin-left: 20px;
-  margin-top: 20px;
+
   width: 250px;
   height: 360px;
   border: 6px solid ivory;
@@ -109,8 +113,7 @@ li .products:hover {
 .home .view-orders {
   position: absolute;
   left: 250px;
-  margin-right: 20px;
-  margin-top: 20px;
+
   width: 250px;
   height: 360px;
   border: 6px solid ivory;
@@ -139,3 +142,42 @@ li .products:hover {
 .home button:hover {
   background: darkolivegreen;
 }
+
+@media (max-width: 550px) {
+  .view-orders {
+    display: none;
+  }
+  .products {
+    display: none;
+  }
+  .title {
+    font-size: 28px;
+    padding-top: 6px;
+  }
+  .nav-right {
+    font-size: 20px;
+  }
+  .box {
+    width: fit-content;
+  }
+
+}
+
+@media (min-width: 550px) {
+  .view {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .view {
+    display: none;
+  }
+}
+
+
+/*@media (max-width: 320px) {
+  ul {
+    background-color: blue;
+  }
+}*/

@@ -24,6 +24,10 @@ ul {
 
 }
 
+.nav-right {
+  float: right;
+}
+
 .home {
     float: right;
 }
