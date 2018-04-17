@@ -188,11 +188,11 @@ img {
 }
 
 @media (max-width: 500px) {
-  .order h1 {
+  .details h1 {
     font-size: 30px;
   }
-  .orders p {
-    font-size: 15px;
+  .details h2 {
+    font-size: 23px;
   }
 }
 
