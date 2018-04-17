@@ -101,9 +101,6 @@ li .home:hover {
 
 }
 
-.dozen {
-
-}
 
 img {
   width: 300px;
@@ -176,3 +173,29 @@ img {
 .orders button:hover {
   background: darkolivegreen;
 }
+
+
+
+@media (max-width: 600px) {
+  .product {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--*/
