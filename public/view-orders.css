@@ -73,6 +73,7 @@ li .home:hover {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  padding: 20px;
 }
 
 .title-box {
@@ -128,8 +129,8 @@ img {
 
 .orders .div-left {
   float: left;
-  margin-left: 20px;
-  margin-top: 20px;
+  /*margin-left: 20px;
+  margin-top: 20px;*/
   width: 495px;
   height: 460px;
   border: 6px solid ivory;
