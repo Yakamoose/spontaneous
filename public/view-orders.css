@@ -176,9 +176,12 @@ img {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .product {
     display: none;
+  }
+  .box {
+    width: fit-content;
   }
 }
 
