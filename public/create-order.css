@@ -509,6 +509,116 @@ img {
   margin-bottom: 0;
 }
 
+@media (max-width: 500px) {
+  .home {
+    display: none;
+  }
+  .title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .address-form input{
+    width: auto;
+  }
+  .delivery-date div {
+    margin-bottom: 20px;
+    border: 6px solid ivory;
+    border-radius: 5%;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    padding: 0 20px;
+     grid-column: 1 / span 3;
+
+  }
+  .delivery-date p{
+    font-size: 15px;
+  }
+  .choose-date input{
+    width: fit-content;
+  }
+  .note input{
+    vertical-align:top;
+    text-align: left;
+    padding-bottom: 50%;
+    padding-left: 10px;
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  .title-box {
+    background-color: #919D47;
+    width: fit-content;
+    height: fit-content;
+    /*border: 2px solid black;*/
+    border-radius: 15px;
+    vertical-align: center;
+
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    /*padding: 0 30px;*/
+  }
+
+  .title-box h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    color: ivory;
+
+  }
+
+  .payment h1 {
+    font-size: 30px;
+  }
+
+  .payment input {
+    font-size: 16px;
+  }
+
+  .cc-name {
+    width: 250px;
+  }
+
+  .cc-number {
+    width: 250px;
+  }
+
+  .cc-exp {
+    width: 140px;
+  }
+
+  .cc-csc {
+    width: 90px;
+  }
+
+  .cc-street {
+    width: 250px;
+  }
+
+  .cc-city {
+    width: 100px;
+  }
+
+  .cc-state {
+    padding-left: 0;
+    width: 40px;
+  }
+
+  .cc-zip {
+    width: 80px;
+  }
+
+
+}
 
 
 
