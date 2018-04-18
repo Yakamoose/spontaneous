@@ -62,7 +62,7 @@ li .home:hover {
 
   /*background-image: url("https://img00.deviantart.net/d861/i/2010/348/c/c/brown_wall_texture_by_fantasystock-d34un9s.jpg");*/
   background-color: #919D47;
-  width: 1000px;
+  width: fit-content;
   height: auto;
   /*border: 2px solid black;*/
   border-radius: 15px;
