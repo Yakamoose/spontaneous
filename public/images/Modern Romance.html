@@ -1,0 +1,147 @@
+<!DOCTYPE html5>
+<!-- saved from url=(0092)file:///C:/Users/xeric/Desktop/projects_thinkful/spontaneous-design/public/create-order.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Modern Romance</title>
+
+    <link href="./Modern Romance_files/create-order.css" rel="stylesheet" type="text/css">
+    <link href="./Modern Romance_files/css" rel="stylesheet">
+    <link href="./Modern Romance_files/css(1)" rel="stylesheet">
+    <link rel="icon" type="image/png" href="file:///C:/Users/xeric/Desktop/projects_thinkful/spontaneous-design/public/images/title-icon.png">
+
+    <script src="./Modern Romance_files/jquery-3.2.1.min.js.download" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+
+
+    <div class="background-image">
+      <nav>
+        <ul>
+          <li><a class="title" href="file:///C:/Users/xeric/Desktop/projects_thinkful/spontaneous-design/public/home.html">Moderen Romance</a></li>
+          <li><a class="logOut nav-right" href="file:///C:/Users/xeric/Desktop/projects_thinkful/spontaneous-design/public/index.html">Log Out</a></li>
+          <!-- <li><a class="edit-user" href="edit-user.html">Edit Profile</a></li> -->
+          <li><a class="home nav-right" href="file:///C:/Users/xeric/Desktop/projects_thinkful/spontaneous-design/public/home.html">Home</a></li>
+        </ul>
+      </nav>
+
+      <div class="title-box">
+        <h1 class="title-product" style="display: none;">Choose Product</h1>
+        <h1 class="title-address" style="">Delivery Address</h1>
+        <h1 class="title-delivery-date" style="display: none;">Delivery Window</h1>
+        <h1 class="title-note" style="display: none;">Add a Note</h1>
+        <h1 class="title-payment" style="display: none;">Payment Information</h1>
+        <h1 class="title-confirmation" style="display: none;">Well Done!!!</h1>
+      </div>
+
+      <div class="box">
+
+
+        <div class="products" style="display: none;">
+          <div class="dozen pro">
+            <img src="./Modern Romance_files/dozen.jpg" alt="image dozen roses">
+            <p>Dozen Roses<br>$49.99</p>
+            <button class="dozen-btn">Choose</button>
+          </div>
+          <div class="two-dozen pro">
+            <img src="./Modern Romance_files/two-dozen.jpg" alt="image two dozen roses">
+            <p>Two Dozen Roses<br>$69.99</p>
+            <button class="two-dozen-btn">Choose</button>
+          </div>
+          <div class="mixed-bouquet pro">
+            <img src="./Modern Romance_files/mixed-bouquet.jpg" alt="image mixed bouquet">
+            <p>Mixed Roses<br>$39.99</p>
+            <button class="mixed-btn">Choose</button>
+          </div>
+        </div>
+
+        <div class="address" style="">
+          <form class="address-form">
+							<input type="text" id="firstName" placeholder="First Name" required="">
+              <input type="text" id="lastName" placeholder="Last Name" required="">
+              <input type="text" id="street" placeholder="Street Address" required="">
+              <input type="text" id="city" placeholder="City" required="">
+              <input type="text" id="state" placeholder="State" required="">
+              <input type="text" id="zipCode" placeholder="Zip Code" required="">
+
+							<button type="submit" class="address-submit-btn">Next</button>
+					</form>
+        </div>
+
+        <div class="delivery-date" style="display: none">
+          <div class="spontaneous">
+            <h1>Spontaneous</h1>
+            <p>Choose a window for your delivery to take place and your order will be shipped randomy within that window.</p>
+            <form class="spont-form">
+              <!-- <input type="radio" id="0.5" name="choice" required>2 weeks</input> -->
+
+              <input type="radio" id="1" name="choice" required="">1 month
+              <input type="radio" id="3" name="choice" required="">3 months<br>
+              <input type="radio" id="6" name="choice" required="">6 months
+              <input type="radio" id="12" name="choice" required="">1 year<br>
+              <button type="submit" class="spontaneous-date-btn">Next</button>
+            </form>
+
+          </div>
+
+          <div class="choose-date">
+            <h1>Choose A Date</h1>
+            <p>Choose a specific date to ship like a birthday, valentine's day, mother's day etc, to keep your bases covered.</p>
+            <form class="choose-date-form">
+              <input type="date" id="choose-date-id" required=""><br>
+              <button type="submit" class="choose-date-btn">Next</button>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="note" style="display: none;">
+
+          <form class="note-form">
+            <input type="text" id="note-text" placeholder="Adding a note is NOT required"><br>
+            <button type="submit" class="note-btn">Next</button>
+          </form>
+        </div>
+
+
+        <div class="payment" style="display: none;">
+          <h1>Enter credit card info below</h1>
+
+          <form class="cc-form">
+            <input type="text" class="cc-name" id="cc-name" placeholder="Name on card"><br>
+            <input type="number" class="cc-number" id="cc-number" placeholder="Credit Card Number"><br>
+            <input type="text" class="cc-exp" id="cc-exp" placeholder="Exp Date MM/YR">
+            <input type="number" class="cc-csc" id="cc-csc-code" placeholder="CSC Code ###">
+
+            <p>Billing Address</p>
+
+            <input type="text" class="cc-street" id="cc-street" placeholder="Street Address"><br>
+            <input type="text" class="cc-city" id="cc-city" placeholder="City">
+            <input type="text" class="cc-state" id="cc-state" placeholder="ST">
+            <input type="number" class="cc-zip" id="cc-zipCode" placeholder="Zip Code"><br>
+
+            <button type="submit" class="payment-btn">Submit Order</button>
+          </form>
+        </div>
+
+        <div class="confirmation" style="display: none;">
+          <h1>Your order has been submitted</h1>
+          <p>An email with your order details has been emailed.</p>
+          <p>You can check on your order and Spontaneous© delivery date from the View Order page.</p>
+          <h1>Thank you for your order!</h1>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+    <script src="./Modern Romance_files/create-order.js.download"></script>
+  
+
+</body></html>

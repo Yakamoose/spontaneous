@@ -4,9 +4,11 @@ function watchCreateOrder() {
 
     if(localStorage.loggedIn == 0) {
       window.location = './index.html';
+      $('.start-box').hide();
+      $(".signup-login").show();
     }
     else {
-      window.location = './home.html';
+      window.location = './create-order.html';
     };
 
   });

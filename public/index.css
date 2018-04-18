@@ -47,6 +47,7 @@ li .login:hover {
 .background-image {
     background-image: url("https://img.elo7.com.br/product/original/1C102EA/adesivo-papel-de-parede-chevron-floral-escolha-a-cor.jpg");
     height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,7 +59,7 @@ li .login:hover {
   width: fit-content;
   height: auto;
   border-radius: 5%;
-  margin: 130px auto;
+  margin: 100px auto auto auto;
   position: relative;
 
 
@@ -302,6 +303,23 @@ li .login:hover {
   .title {
     font-size: 28px;
     padding-top: 12px;
+  }
+}
+
+@media (max-height: 650px) {
+  body {
+    background-image: url("https://img.elo7.com.br/product/original/1C102EA/adesivo-papel-de-parede-chevron-floral-escolha-a-cor.jpg");
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  .background-image {
+      background-image: none;
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
   }
 }
 
