@@ -52,7 +52,7 @@ $.ajax({
           <div class="box">
           <div class="orders" style="display: grid; height: fit-content; width: fit-content; text-align: center;">
             <h1>You have not placed any orders yet.</h1>
-            <h1>Head back to the home page and click Start Order</h1>
+            <h1>Head back to the home page and click Start Order.</h1>
         </div>
         </div>
           `)
