@@ -1,4 +1,3 @@
-// const faker = require('faker');
 
 
 let order = [{
@@ -27,18 +26,6 @@ let order = [{
     paid: Boolean
   }
 }];
-
-
-
-// $.ajax({
-//   type: 'GET',
-//   contentType: 'application/json',
-//   url: 'http://localhost:8080/user/5ace5b56b41ae65e60778cc6',
-//   success: function(data) {
-//     console.log('success');
-//     console.log(data);
-//   }
-// });
 
 
 function watchDozen() {
@@ -258,19 +245,8 @@ function watchPaymentSubmit() {
 
     const orders ={orders: order};
     console.log(orders);
-
-    // $.ajax({
-    //   type: 'GET',
-    //   contentType: 'application/json',
-    //   url: 'http://localhost:8080/users',
-    //   success: function(data) {
-    //     console.log('success');
-    //     console.log(data);
-    //   }
-    // })
     const endpoint = localStorage.userId;
-    // console.log('endpoint');
-    // console.log(endpoint);
+
 
 
     $.ajax({
@@ -296,21 +272,3 @@ function watchPaymentSubmit() {
   });
 }
 $(watchPaymentSubmit);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ------

@@ -1,5 +1,4 @@
 
-
 const endpoint = localStorage.userId;
 let user = {};
 

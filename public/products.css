@@ -9,7 +9,6 @@ body, html {
 
 body {
   background-image: url("https://img.elo7.com.br/product/original/1C102EA/adesivo-papel-de-parede-chevron-floral-escolha-a-cor.jpg");
-
   background-attachment: fixed;
   background-repeat: no-repeat;
 
@@ -51,49 +50,32 @@ li .home:hover {
     background-color: #738637;
 }
 
-/*.background-image {
-    background-image: url("https://img.elo7.com.br/product/original/1C102EA/adesivo-papel-de-parede-chevron-floral-escolha-a-cor.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}*/
-
 .box {
   background-color: #919D47;
   width: fit-content;
   height: auto;
-  /*border: 2px solid black;*/
   border-radius: 15px;
   vertical-align: center;
-
   margin: 70px auto;
   position: relative;
   padding: 20px 20px 1px 20px;
-  /*display: inline-flex;*/
   flex-direction: row;
   justify-content: space-around;
 }
-
-
 
 img {
   width: 240px;
   border-radius: 6px;
 }
 
-
 .products {
-  /*display: inline-block;*/
   text-align: center;
 
 }
 
 .pro {
-
   width: 290px;
   height: 460px;
-
   border: 6px solid ivory;
   padding: 40px 10px;
   font-family: 'Raleway', sans-serif;
@@ -101,7 +83,6 @@ img {
   font-weight: bold;
   border-radius: 5%;
   margin-bottom: 20px;
-
 }
 
 .products h1{
@@ -115,55 +96,6 @@ img {
 .products p{
   font-size: 20px;
 }
-/*
-.products .dozen {
-  float: left;
-  margin-left: 20px;
-  margin-top: 20px;
-  width: 290px;
-  height: 460px;
-  border: 6px solid ivory;
-  padding: 40px 10px;
-  font-family: 'Raleway', sans-serif;
-  color: ivory;
-  font-weight: bold;
-  border-radius: 5%;
-}
-
-.products .two-dozen {
-  position: absolute;
-  left: 323px;
-  margin-left: 20px;
-  margin-top: 20px;
-  width: 290px;
-  height: 460px;
-  margin-left: 30px;
-
-  border: 6px solid ivory;
-  padding: 40px 10px;
-  font-family: 'Raleway', sans-serif;
-  color: ivory;
-  font-weight: bold;
-  border-radius: 5%;
-
-}
-
-.products .mixed-bouquet {
-  position: absolute;
-  left: 655px;
-  margin-left: 20px;
-  margin-top: 20px;
-  width: 290px;
-  height: 460px;
-  border: 6px solid ivory;
-  margin-left: 30px;
-  padding: 40px 10px;
-  font-family: 'Raleway', sans-serif;
-  color: ivory;
-  font-weight: bold;
-  border-radius: 5%;
-
-}*/
 
 .products button {
   margin-top: 10px;
@@ -189,27 +121,3 @@ img {
     padding-top: 12px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----*/

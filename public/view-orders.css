@@ -34,9 +34,7 @@ ul {
 
 
 .title {
-  /*text-align: center;*/
   position: absolute;
-  /*left: 41%;*/
   font-size: 33px;
   color: white;
   font-family: 'Dancing Script', cursive;
@@ -60,14 +58,11 @@ li .home:hover {
 
 .box {
 
-  /*background-image: url("https://img00.deviantart.net/d861/i/2010/348/c/c/brown_wall_texture_by_fantasystock-d34un9s.jpg");*/
   background-color: #919D47;
   width: 1000px;
   height: auto;
-  /*border: 2px solid black;*/
   border-radius: 15px;
   vertical-align: center;
-
   margin-top: 35px;
   padding-bottom: 15px;
   margin-left: auto;
@@ -77,15 +72,11 @@ li .home:hover {
 }
 
 .title-box {
-
-  /*background-image: url("https://img00.deviantart.net/d861/i/2010/348/c/c/brown_wall_texture_by_fantasystock-d34un9s.jpg");*/
   background-color: #919D47;
   width: 550px;
   height: 70px;
-  /*border: 2px solid black;*/
   border-radius: 15px;
   vertical-align: center;
-
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
@@ -129,8 +120,6 @@ img {
 
 .orders .div-left {
   float: left;
-  /*margin-left: 20px;
-  margin-top: 20px;*/
   width: 495px;
   height: 460px;
   border: 6px solid ivory;
@@ -144,8 +133,6 @@ img {
 .orders .div-right {
   position: absolute;
   left: 500px;
-  /*margin-right: 20px;
-  margin-top: 20px;*/
   width: 450px;
   height: 460px;
   border: 6px solid ivory;
@@ -155,7 +142,6 @@ img {
   color: ivory;
   font-weight: bold;
   border-radius: 5%;
-
 }
 
 .orders button {
@@ -210,21 +196,3 @@ img {
     height: fit-content;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--*/

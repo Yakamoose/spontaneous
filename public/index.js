@@ -144,57 +144,6 @@ function watchCreateUserButton() {
     } else {
       alert('Must fill in ALL fields');
     }
-    // $.ajax({
-    //   type: 'GET',
-    //   contentType: 'application/json',
-    //   url: 'http://localhost:8080/users',
-    //   success: function(data) {
-    //     console.log('success');
-    //     console.log(data);
-    //     data.forEach(function(users) {
-    //       if(users.userName === user.userName && users.password === user.password) {
-    //         alert('User already exists.');
-    //         // window.location = './index.html'
-    //         // $('.start-box').hide();
-    //         // $(".signup-login").hide();
-    //         // $('.signup-box').show();
-    //         // $('.login-box').hide();
-    //         // return;
-    //       } else {
-    //         $.ajax({
-    //     						type: 'POST',
-    //     						data: JSON.stringify(user),
-    //     				    contentType: 'application/json',
-    //                 url: 'http://localhost:8080/user/',
-    //                 success: function(data) {
-    //                     console.log('success');
-    //                     console.log(JSON.stringify(data));
-    //                     localStorage.setItem('userId', data.id);
-    //                     localStorage.loggedIn = 1;
-    //                     window.location = './home.html';
-    //
-    //                 }
-    //         });
-    //       }
-    //     });
-    //
-    //   }
-    // })
-
-    // $.ajax({
-		// 				type: 'POST',
-		// 				data: JSON.stringify(user),
-		// 		    contentType: 'application/json',
-    //         url: 'http://localhost:8080/user/',
-    //         success: function(data) {
-    //             console.log('success');
-    //             console.log(JSON.stringify(data));
-    //             localStorage.setItem('userId', data.id);
-    //             localStorage.loggedIn = 1;
-    //             window.location = './home.html';
-    //
-    //         }
-    // });
 
   });
 }
