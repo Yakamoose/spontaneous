@@ -59,9 +59,7 @@ li .home:hover {
 .box {
 
   background-color: #919D47;
-  width: intrinsic;           /* Safari/WebKit uses a non-standard name */
-  width: -moz-max-content;    /* Firefox/Gecko */
-  width: -webkit-max-content; /* Chrome */
+  width: 1000px;
   height: auto;
   border-radius: 15px;
   vertical-align: center;
