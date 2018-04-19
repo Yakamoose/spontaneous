@@ -33,7 +33,6 @@ function watchDozen() {
     event.preventDefault();
     order[0].product = 'dozen roses';
 
-    console.log(order);
     $('.title-product').hide();
     $('.title-address').show();
 
@@ -48,7 +47,6 @@ function watchTwoDozen() {
     event.preventDefault();
     order[0].product = 'two dozen roses';
 
-    console.log(order);
     $('.title-product').hide();
     $('.title-address').show();
 
@@ -63,7 +61,6 @@ function watchMixedBouquet() {
     event.preventDefault();
     order[0].product = 'mixed bouquet of roses';
 
-    console.log(order);
     $('.title-product').hide();
     $('.title-address').show();
 
@@ -88,7 +85,6 @@ function watchAddressSubmit() {
     order[0].address.zipCode = document.getElementById('zipCode').value;
 
     if(order[0].firstName != "" && order[0].lastName != "" && order[0].address.street != "" && order[0].address.city != "" && order[0].address.state != "" && order[0].address.state != "" && order[0].address.zipCode != "" ) {
-      console.log(order);
       $('.title-address').hide();
       $('.title-delivery-date').show();
 
@@ -97,21 +93,17 @@ function watchAddressSubmit() {
     } else {
       alert('Please fill in ALL fields');
     }
-
-
-
   });
 }
 $(watchAddressSubmit);
 
 
 // -----------------------------------------------------------
-
+//This function takes a radio choice and comes up with a spontaneous date in the delivery window
 function watchSpontSubmit() {
   $('.spontaneous-date-btn').click(event => {
     event.preventDefault();
 
-    // console.log(dateWindow);
     if(document.querySelector('input[name="choice"]:checked') != null) {
       let dateWindow = Number(document.querySelector('input[name="choice"]:checked').id);
 
@@ -132,7 +124,6 @@ function watchSpontSubmit() {
       }
 
       const deliveryDate = `${month}/${day}/${year}`;
-      // console.log(deliveryDate);
 
       let todayYear = Number(d.getFullYear());
       let todayMonth = d.getMonth()+1;
@@ -156,7 +147,6 @@ function watchSpontSubmit() {
 
       order[0].deliveryDate = randomDate(deliveryDate, today);
 
-      console.log(order);
 
 
       $('.title-product').hide();
@@ -175,15 +165,15 @@ function watchSpontSubmit() {
 }
 $(watchSpontSubmit);
 
+
+
 function watchChooseDate() {
   $('.choose-date-btn').click(event => {
     event.preventDefault();
 
     order[0].deliveryDate = document.getElementById('choose-date-id').value;
     order[0].deliveryDate = order[0].deliveryDate.slice(0, 10);
-    // console.log(order[0].deliveryDate);
-    if(document.getElementById('choose-date-id').value != "") {
-      console.log(order);
+    if(document.getElementById('choose-date-id').value != "" && new Date(order[0].deliveryDate) > new Date()) {
       $('.title-product').hide();
       $('.title-address').hide();
       $('.title-delivery-date').hide();
@@ -193,7 +183,7 @@ function watchChooseDate() {
       $('.delivery-date').hide();
       $('.note').show();
     } else {
-      alert('Please choose a date from the calendar.');
+      alert('Please choose a date in the future from the calendar.');
     }
   });
 }
@@ -208,7 +198,6 @@ function watchNoteSubmit() {
     event.preventDefault();
 
     order[0].note = document.getElementById('note-text').value;
-    console.log(order);
 
     $('.title-note').hide();
     $('.title-payment').show();
@@ -216,7 +205,6 @@ function watchNoteSubmit() {
 
     $('.note').hide();
     $('.payment').show();
-
   })
 }
 $(watchNoteSubmit);
@@ -243,32 +231,32 @@ function watchPaymentSubmit() {
 
 
 
-    const orders ={orders: order};
-    console.log(orders);
+    const orders = {orders: order};
     const endpoint = localStorage.userId;
 
+    if(order[0].payment.cardNumber != "" && order[0].payment.expDate != "" && order[0].payment.csc != "" && order[0].payment.name != "" && order[0].payment.billingAddress.street != "" && order[0].payment.billingAddress.city != "") {
+
+      $.ajax({
+        type: 'PUT',
+        data: JSON.stringify(orders),
+        contentType: 'application/json',
+        url: `https://modern-romance.herokuapp.com/user/order/${endpoint}`,
+        success: function(data) {
+          console.log('success');
+        }
+      });
+
+      $('.title-note').hide();
+      $('.title-payment').hide();
+      $('.title-confirmation').show();
 
 
-    $.ajax({
-      type: 'PUT',
-      data: JSON.stringify(orders),
-      contentType: 'application/json',
-      url: `https://modern-romance.herokuapp.com/user/order/${endpoint}`,
-      success: function(data) {
-        console.log('success');
-        console.log(data);
-      }
-    });
-
-    $('.title-note').hide();
-    $('.title-payment').hide();
-    $('.title-confirmation').show();
-
-
-    $('.note').hide();
-    $('.payment').hide();
-    $('.confirmation').show();
-
+      $('.note').hide();
+      $('.payment').hide();
+      $('.confirmation').show();
+    } else {
+      alert('Please fill out ALL fields.')
+    }
   });
 }
 $(watchPaymentSubmit);
