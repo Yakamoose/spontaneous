@@ -193,6 +193,10 @@ img {
   .logOut {
     display: none;
   }
+  .title {
+    font-size: 28px;
+    padding-top: 12px;
+  }
   .title-box h1 {
     /*padding-top: 5px;*/
     font-size: 30px;
