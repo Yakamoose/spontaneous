@@ -53,7 +53,9 @@ li .login:hover {
 
 .box {
   background-color: #919D47;
-  width: fit-content;
+  width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
   height: auto;
   border-radius: 5%;
   margin: 100px auto auto auto;
