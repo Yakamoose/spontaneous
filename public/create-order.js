@@ -84,7 +84,7 @@ function watchAddressSubmit() {
     order[0].address.state = document.getElementById('state').value;
     order[0].address.zipCode = document.getElementById('zipCode').value;
 
-    if(order[0].firstName != "" && order[0].lastName != "" && order[0].address.street != "" && order[0].address.city != "" && order[0].address.state != "" && order[0].address.state != "" && order[0].address.zipCode != "" ) {
+    if(order[0].firstName != "" && order[0].address.street != "" && order[0].address.city != "" && order[0].address.state != "" && order[0].address.state != "" && order[0].address.zipCode != "" ) {
       $('.title-address').hide();
       $('.title-delivery-date').show();
 
