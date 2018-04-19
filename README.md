@@ -3,7 +3,7 @@
 <a href="https://modern-romance.herokuapp.com/" target="blank">https://modern-romance.herokuapp.com/</a>
 <br>
 <br>
-<br>
+
 
 <img src="./readme_images/landing-page.png" height="400px">
 <br><br>

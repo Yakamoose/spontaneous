@@ -59,7 +59,7 @@ li .home:hover {
 .box {
 
   background-color: #919D47;
-  width: 1000px;
+  width: fit-content;
   height: auto;
   border-radius: 15px;
   vertical-align: center;
