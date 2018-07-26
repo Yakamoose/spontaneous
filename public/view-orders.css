@@ -114,6 +114,14 @@ img {
   text-align: center;
 }
 
+.no-orders h1{
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  color: ivory;
+  text-align: center;
+}
+
 .orders p{
   font-size: 20px;
 }
