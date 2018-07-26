@@ -174,12 +174,20 @@ li .login:hover {
   text-align: center;
 }
 
-.login-box h1{
+.login-box h1 {
   font-family: 'Dancing Script', cursive;
   text-align: center;
   color: ivory;
   font-size: 50px;
   margin-top: 0;
+  margin-bottom: -11px;
+}
+
+.login-box p {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  color: ivory;
+  font-size: 20px;
 }
 
 .login-form input{
