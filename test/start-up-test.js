@@ -84,7 +84,6 @@ describe('API tests', function() {
 
   beforeEach(function() {
     const order = generateOrder();
-    // console.log(seedUserData());
     return seedUserData();
 
   });
