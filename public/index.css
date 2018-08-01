@@ -53,9 +53,8 @@ li .login:hover {
 
 .box {
   background-color: #919D47;
-  width: intrinsic;           /* Safari/WebKit uses a non-standard name */
-  width: -moz-max-content;    /* Firefox/Gecko */
-  width: -webkit-max-content; /* Chrome */
+  width: intrinsic;/* Chrome */
+  max-width: fit-content;
   height: auto;
   border-radius: 5%;
   margin: 100px auto auto auto;
@@ -89,7 +88,12 @@ li .login:hover {
   font-size: 17px;
   font-weight: bold;
   text-align: center;
+
+}
+
+.start-box {
   max-width: 500px;
+
 }
 
 .start-btn {
@@ -279,6 +283,13 @@ li .login:hover {
     .products {
       display: none;
     }
+    .start-box h1 {
+      font-size: 30px;
+    }
+    .box {
+      margin: 50px auto auto auto;
+    }
+
 }
 
 @media (max-width: 400px) {
